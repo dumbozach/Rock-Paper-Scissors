@@ -1,0 +1,77 @@
+var player = null;
+
+function paper() {
+  player= "Paper"
+}
+
+function rock() {
+  player="Rock"
+}
+
+function scissors() {
+  player="Scissors"
+}
+
+
+function checkWinner() {
+  var tictactoe = ["Rock", "Paper", "Scissors"];
+  
+  var cpu = tictactoe[Math.floor(Math.random() * tictactoe.length)];
+  
+  var cpuResults = document.getElementById("computer");
+  
+  cpuResults.innerHTML = ("The computer picked "+cpu)
+
+  var results = document.getElementById("results");
+  
+  
+  if (player == cpu){
+    console.log('Computer picks '+cpu)
+    results.innerHTML = ("Tie");
+  } 
+  
+  if (player == 'Rock') {
+    if(cpu== 'Paper') {
+      console.log('Computer picks '+cpu)
+      results.innerHTML = ("You lose. Paper beats Rock.")
+    } 
+  }
+  
+  if (player == 'Paper') {
+    if(cpu== 'Scissors') {
+      console.log('Computer picks '+cpu)
+      results.innerHTML = ("You lose. Scissors beats Paper.")
+    }
+  }
+  
+  if (player == 'Scissors') {
+    if(cpu== 'Rock') {
+      console.log('Computer picks '+cpu)
+      results.innerHTML = ("You lose. Rock beats Scissors.")
+    }
+  }
+  
+  if (player == 'Rock') {
+    if (cpu == 'Scissors') {
+      console.log('Computer picks '+cpu)
+      results.innerHTML = ("You win! Rocks beats Scissors!")
+    }
+  }
+  
+  if (player == 'Scissors') {
+    if (cpu == 'Paper') {
+      console.log('Computer picks '+cpu)
+      results.innerHTML = ("You win! Scissors beats Paper!")
+    }
+  }
+  
+  if (player == 'Paper') {
+    if (cpu == 'Rock') {
+      console.log('Computer picks '+cpu)
+      results.innerHTML = ("You win! Paper beats Rock!")
+
+  
+    }
+  }
+
+}
